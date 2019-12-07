@@ -60,7 +60,9 @@ object Application extends App with LazyLogging {
   server.start().onComplete {
     case Success(_) =>
       logger.info(s"Server is ready and listening on http://${server.host}:${server.port}...")
-    case Failure(t) => logger.error("Failed to start", t)
+    case Failure(t) =>
+      logger.error("Failed to start", t)
+      System.exit(1)
   }
 
   import ResilientFutureHolder._
