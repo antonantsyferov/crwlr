@@ -79,5 +79,5 @@ Crawls ads.txt from the given list of URLs, parses data and provides an endpoint
 * Physical storage (all data is kept in H2 RAM DB).
 ## Build
 * [SBT](https://www.scala-sbt.org/download.html) is required.
-* run command line: `sbt assemble`
+* run command line: `sbt assembly`
 * take `./target/scala-2.12/ads-crawler-0.0.2.jar` (fat jar)
