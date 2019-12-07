@@ -20,44 +20,44 @@ class AdsCrawlerSpec extends AsyncFlatSpec with Matchers with AsyncMockFactory w
     val pub1Sellers = List(Seller("1", "2", Direct, None))
     val pub2Sellers = List(Seller("1", "2", Direct, None), Seller("3", "4", Reseller, Some("5")))
 
-    val parser = stub[Parser]
+    val parser = mock[Parser]
     (parser.parse _)
-      .when("pub1-content")
+      .expects("pub1-content")
       .returns(pub1Sellers)
       .once()
 
     (parser.parse _)
-      .when("pub2-content")
+      .expects("pub2-content")
       .returns(pub2Sellers)
       .once()
 
-    val loader = stub[Loader]
+    val loader = mock[Loader]
     (loader.load _)
-      .when(publisher1.url)
+      .expects(publisher1.url)
       .returns(Future.successful("pub1-content"))
       .once()
     (loader.load _)
-      .when(publisher2.url)
+      .expects(publisher2.url)
       .returns(Future.successful("pub2-content"))
       .once()
 
-    val repository = stub[Repository]
+    val repository = mock[Repository]
     (repository.persist _)
-      .when(Seq(PublisherData(publisher1, pub1Sellers), PublisherData(publisher2, pub2Sellers)))
+      .expects(Seq(PublisherData(publisher1, pub1Sellers), PublisherData(publisher2, pub2Sellers)))
       .returns(Future.unit)
       .once()
     (repository.getSellers _)
-      .when(where { v: String =>
+      .expects(where { v: String =>
         publisher1.name.equalsIgnoreCase(v)
       })
       .returns(Future.successful(pub1Sellers))
       .twice()
     (repository.getSellers _)
-      .when(publisher2.name)
+      .expects(publisher2.name)
       .returns(Future.successful(pub2Sellers))
       .once()
     (repository.close _)
-      .when()
+      .expects()
       .returns(Future.unit)
       .once()
 
