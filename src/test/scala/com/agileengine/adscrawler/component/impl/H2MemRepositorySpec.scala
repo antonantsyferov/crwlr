@@ -36,7 +36,8 @@ class H2MemRepositorySpec
     val data = List(
       PublisherData(pub1, pub1Sellers),
       PublisherData(pub2, pub2Sellers),
-      PublisherData(pub3, pub3Sellers)
+      PublisherData(pub3, pub3Sellers),
+      PublisherData(pub4, Nil)
     )
 
     When("save and then load the data from DB")
