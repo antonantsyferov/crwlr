@@ -67,7 +67,7 @@ Crawls ads.txt from the given list of URLs, parses data and provides an endpoint
     ```
 ## Key Capabilities & Known Issues
 #### Features
-* Parses ads.txt according to (IAB Specification)[https://iabtechlab.com/~iabtec5/wp-content/uploads/2016/07/IABOpenRTBAds.txtSpecification_Version1_Final.pdf] with some extra improvements:
+* Parses ads.txt according to [IAB Specification](https://iabtechlab.com/~iabtec5/wp-content/uploads/2016/07/IABOpenRTBAds.txtSpecification_Version1_Final.pdf) with some extra improvements:
     * case-insensitive Relationship values are supported ('direct'/'Direct')
     * ignores duplicate records.
 * Supports HTTP redirects when fetching the content.
