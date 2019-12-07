@@ -3,7 +3,6 @@ package com.agileengine.adscrawler
 import java.net.URL
 
 import akka.actor.ActorSystem
-import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
 import akka.stream.ActorMaterializer
 import com.agileengine.adscrawler.component.AdsCrawler
 import com.agileengine.adscrawler.component.impl.{H2MemRepository, HttpLoader, RegexParser}
@@ -19,7 +18,7 @@ import scala.util.{Failure, Success, Try}
 /**
   * Entry point.
   */
-object Application extends App with LazyLogging with SprayJsonSupport {
+object Application extends App with LazyLogging {
   implicit val system: ActorSystem = ActorSystem("AdsCrawlerService")
   implicit val materializer: ActorMaterializer = ActorMaterializer()
   implicit val executor: ExecutionContextExecutor = system.dispatcher
