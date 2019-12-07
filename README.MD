@@ -7,7 +7,8 @@ Crawls ads.txt from the given list of URLs, parses data and provides an endpoint
 [Download Executable JAR](https://github.com/antonantsyferov/crwlr/releases/download/v0.0.1/ads-crawler-0.0.1.jar)
 #### Run Instructions
 * [JRE 8](https://openjdk.java.net/install/) is required.
-* launch via command line: `java -jar -DPORT=8080 -DPUBLISHERS=http://example.com/ads.txt,http://abc.com/ads.txt ads-crawler-0.0.1.jar`
+* launch via command line: \
+  `java -jar -DPORT=8080 -DPUBLISHERS=http://example.com/ads.txt,http://abc.com/ads.txt ads-crawler-0.0.1.jar`
     * `PORT` - to listen, optional parameter
     * `PUBLISHERS` - additional ads.txt URLs to crawl, comma-separated, optional parameter. The defaults are:
         * http://www.cnn.com/ads.txt
