@@ -28,7 +28,7 @@ class HttpLoaderSpec
 
   override protected def beforeAll(): Unit = wiremock.start()
   override protected def afterAll(): Unit = {
-    wiremock.shutdown()
+    wiremock.stop()
     TestKit.shutdownActorSystem(system)
   }
 
