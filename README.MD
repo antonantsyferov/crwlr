@@ -4,11 +4,11 @@ Crawls ads.txt from the given list of URLs, parses data and provides an endpoint
 - [Key Capabilities & Known Issues](#key-capabilities--known-issues)
 - [Build](#build)
 ## Run
-[Download Executable JAR](https://github.com/antonantsyferov/crwlr/releases/download/v0.0.1/ads-crawler-0.0.1.jar)
+[Download Executable JAR](https://github.com/antonantsyferov/crwlr/releases/download/v0.0.2/ads-crawler-0.0.2.jar)
 #### Run Instructions
 * [JRE 8](https://openjdk.java.net/install/) is required.
 * launch via command line: \
-  `java -jar -DPORT=8080 -DPUBLISHERS=http://example.com/ads.txt,http://abc.com/ads.txt ads-crawler-0.0.1.jar`
+  `java -jar -DPORT=8080 -DPUBLISHERS=http://example.com/ads.txt,http://abc.com/ads.txt ads-crawler-0.0.2.jar`
     * `PORT` - to listen, optional parameter
     * `PUBLISHERS` - additional ads.txt URLs to crawl, comma-separated, optional parameter. The defaults are:
         * http://www.cnn.com/ads.txt
@@ -80,4 +80,4 @@ Crawls ads.txt from the given list of URLs, parses data and provides an endpoint
 ## Build
 * [SBT](https://www.scala-sbt.org/download.html) is required.
 * run command line: `sbt assemble`
-* take `./target/scala-2.12/ads-crawler-0.0.1.jar` (fat jar)
+* take `./target/scala-2.12/ads-crawler-0.0.2.jar` (fat jar)
