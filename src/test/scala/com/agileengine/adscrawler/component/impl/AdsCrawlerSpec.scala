@@ -61,7 +61,7 @@ class AdsCrawlerSpec extends AsyncFlatSpec with Matchers with AsyncMockFactory w
       .returns(Future.unit)
       .once()
 
-    When("Crawler instance is build with defined components")
+    When("Crawler instance is built with defined components")
     val crawler = new AdsCrawler(parser, loader, repository, List(publisher1, publisher2))
 
     for {
