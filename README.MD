@@ -43,7 +43,7 @@ Crawls ads.txt from the given list of URLs, parses data and provides an endpoint
         }
     ]
     ```
-* `http://localhost:<port>;/publishers/<name>` - get dataset by the publisher name\
+* `http://localhost:<port>/publishers/<name>` - get dataset by the publisher name\
     Example: `http://localhost:8080/publishers/www.bloomberg.com`
     ```
     [
