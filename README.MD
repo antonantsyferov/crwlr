@@ -1,5 +1,8 @@
 # CRWLR
-Crawls ads.txt from the given list of URLs, parses data and provides an endpoint to retrieve the collected dataset.
+Crawls ads.txt from the given list of URLs, parses data and provides an endpoint to retrieve the collected dataset./
+- [Run](#run)
+- [Key Capabilities & Known Issues](#key-capabilities--known-issues)
+- [Build](#build)
 ## Run
 [Download Executable JAR](https://github.com/antonantsyferov/crwlr/releases/download/v0.0.1/ads-crawler-0.0.1.jar)
 #### Run Instructions
