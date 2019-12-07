@@ -73,6 +73,7 @@ Crawls ads.txt from the given list of URLs, parses data and provides an endpoint
     * ignores duplicate records.
 * Supports HTTP redirects when fetching the content.
 #### Unsupported
+* Cyclic redirect protection
 * ​RFC-1123 domain validation
 * Realtime dataset updates (you have to restart the server to get the latest ads.txt changes)
 * Physical storage (all data is kept in H2 RAM DB).
