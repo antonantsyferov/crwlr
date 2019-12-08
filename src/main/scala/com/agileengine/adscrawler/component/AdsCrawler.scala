@@ -4,6 +4,7 @@ import com.agileengine.adscrawler.domain.{Publisher, PublisherData, Seller}
 import com.typesafe.scalalogging.LazyLogging
 
 import scala.concurrent.{ExecutionContext, Future}
+import scala.util.control.NonFatal
 
 /**
   * The core component responsible for ads.txt loading, its persistence and querying workflow.
@@ -28,10 +29,10 @@ class AdsCrawler(
         .load(p.url)
         .map(parser.parse)
         .map(sellers => Some(PublisherData(p, sellers)))
-        .recoverWith {
-          case t =>
-            logger.error(s"Publisher '${p.name}' was not loaded", t)
-            Future.successful(None)
+        .recover {
+          case NonFatal(e) =>
+            logger.error(s"Publisher '${p.name}' was not loaded", e)
+            None
         }
     }
 
